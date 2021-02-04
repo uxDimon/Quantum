@@ -1,0 +1,15 @@
+extends ../template
+
+block variables
+    - var title = 'Главная'
+
+block content
+    main.main-page
+        section.main-banner
+            .main-banner__background
+                video(autoplay loop preload)
+                    source(src="assets/images/gif-maker-3.mp4")
+            .main-banner__container.container
+                h1.main-banner__title.h1 Умные LED экраны для Вашего бизнеса
+                p.main-banner__text Расскажите о себе всему городу с помощью наших умных экранов 
+                button.main-banner__btn.btn.btn--white Подключиться

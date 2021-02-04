@@ -1,0 +1,33 @@
+.header {
+    background-color: $color-black;
+}
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    padding-bottom: 19px;
+}
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+.header__list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+    @include list;
+    margin-right: 64px;
+}
+.header__link {
+    font-weight: 600;
+    color: $color-white;
+
+    &.active, &:hover, &:active {
+        border-bottom: 1px solid $color-white;
+        transition: 0.2s;
+    }
+}
+.header__btn {
+    padding: 13px 26px;
+}
