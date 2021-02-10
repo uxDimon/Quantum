@@ -16,6 +16,7 @@
 .main-banner__container {
     position: relative;
     padding-top: 190px;
+    padding-top: calc(100vh - 85vh);
 }
 .main-banner__text-wrap {
     max-width: 820px;
