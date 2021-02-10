@@ -64,6 +64,10 @@ p {
     justify-content: space-between;
 }
 
+main {
+	flex: 1;
+}
+
 .container {
 	max-width: 1410px;
 	width: 100%;
@@ -132,6 +136,11 @@ p {
 @import "./pages/contacts.scss";
 @import "./pages/advertisers.scss";
 @import "./pages/taxi.scss";
+@import "./pages/case.scss";
+@import "./pages/case-item.scss";
+@import "./pages/news.scss";
+@import "./pages/news-item.scss";
+@import "./pages/404.scss";
 @import "./common/footer.scss";
 
 @import "./common/form.scss";

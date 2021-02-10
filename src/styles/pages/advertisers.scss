@@ -65,12 +65,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+    row-gap: 50px;
     @include list;
 }
+.advertisers-cases__link {
+    color: $color-super-black;
+}
 .advertisers-cases__img-wrap {
+    width: 100%;
     height: 290px;
 }
 .advertisers-cases__img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 5px;

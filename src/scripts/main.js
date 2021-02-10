@@ -64,3 +64,24 @@ if(document.querySelector('.service-slider__container')) {
         },
     });
 }
+
+//case item slider
+if(document.querySelector('.case-item__slider')) {
+    const swiper = new Swiper('.case-item__slider .swiper-container', {
+        // Optional parameters
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 1,
+
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+    });
+}

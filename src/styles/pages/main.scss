@@ -33,7 +33,7 @@
     position: absolute;
     background: none;
     border: none;
-    bottom: 70px;
+    bottom: calc(100vh - 95vh);
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -246,9 +246,13 @@
 }
 .news__list {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+    row-gap: 50px;
     @include list;
+}
+.news__link {
+    color: $color-super-black;
 }
 .news__link-more {
     display: flex;
@@ -284,6 +288,8 @@
     margin-bottom: 10px;
 }
 .news__date {
+    display: block;
     font-size: 14px;
+    line-height: 160%;
     margin-top: 20px;
 }
