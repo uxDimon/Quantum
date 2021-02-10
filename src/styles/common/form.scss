@@ -1,0 +1,39 @@
+.form {
+    margin-top: 110px;
+    margin-bottom: 105px;
+}
+.form__wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 27px;
+}
+.form__list {
+    max-width: 690px;
+    width: 100%;
+}
+.form__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 19px;
+    padding-top: 45px;
+}
+.form__label {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    transition: top 0.2s;
+}
+.form__input {
+    border: none;
+    border-bottom: 1px solid $color-grey1;
+    padding-bottom: 10px;
+}
+.form__input:focus + .form__label {
+    top: 23px;
+}
+.form__btn {
+    padding: 19px 76px;
+    margin-top: 50px;
+}

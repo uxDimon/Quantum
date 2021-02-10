@@ -7,8 +7,17 @@ $content-max-weight: 1240px;
 
 //цвета
 $color-super-black: #000000;
+$color-arrows: #050505;
+$color-black1: #070707;
 $color-black: #242424;
+$color-black2: #272727;
+$color-darkgrey1: #333333;
+$color-darkgrey: #595959;
 $color-grey: #A5A5A5;
+$color-grey1: #ADADAD;
+$color-grey2: #D7D7D7;
+$color-grey3: #E3E3E3;
+$color-lightgrey: #F8F8F8;
 $color-white: #FFFFFF;
 $color-blue: #4414DA;
 
@@ -57,6 +66,7 @@ p {
 
 .container {
 	max-width: 1410px;
+	width: 100%;
     margin: 0 auto;
     padding-right: 15px;
     padding-left: 15px;
@@ -79,6 +89,8 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-weight: 700;
+	font-size: 18px;
 	line-height: 22px;
 	border-radius: 5px;
 	background: none;
@@ -95,9 +107,35 @@ p {
 	background-color: $color-white;
 }
 
+.btn--black {
+	color: $color-white;
+	background-color: $color-black2;
+}
+
+.h1 {
+	font-weight: 800;
+	font-size: 70px;
+	line-height: 130%;
+	color: $color-white;
+}
+
+.h2 {
+	font-weight: 800;
+	font-size: 36px;
+	line-height: 44px;
+}
+
 @import "./common/header.scss";
 @import "./pages/index.scss";
+@import "./pages/main.scss";
+@import "./pages/service.scss";
+@import "./pages/contacts.scss";
+@import "./pages/advertisers.scss";
+@import "./pages/taxi.scss";
 @import "./common/footer.scss";
+
+@import "./common/form.scss";
+@import "./common/breadcrumbs.scss";
 
 // @media screen and (max-width: 1274px) {
 
