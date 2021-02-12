@@ -236,10 +236,10 @@ if(document.querySelectorAll('.form__input')) {
     let labels = document.querySelectorAll('.form__label');
 
     for(let input of inputs) {
-        input.addEventListener('focusout', function(){
+        input.addEventListener('onchange', function(){
             if(!input.value == '') {
                 for(let label of labels) {
-                    label.style.top = 45;
+                    label.style.top = 23;
                 }
             }
         })
