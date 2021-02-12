@@ -29,6 +29,13 @@
     border: none;
     border-bottom: 1px solid $color-grey1;
     padding-bottom: 10px;
+
+    &.error {
+        border-bottom-color: $color-red;
+    }
+    &.success {
+        border-bottom-color: #2bcf54;
+    }
 }
 .form__input:focus + .form__label {
     top: 23px;
@@ -36,4 +43,32 @@
 .form__btn {
     padding: 19px 76px;
     margin-top: 50px;
+    @include hover-black;
+}
+.form__img-wrap {
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+    .form__img-wrap {
+        display: none;
+    }
+    .form__list {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .form {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+    .form__wrap {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+    .form__btn {
+        width: 100%;
+        padding: 18px 20px;
+    }
 }

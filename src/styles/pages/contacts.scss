@@ -47,3 +47,37 @@
 .contacts__address {
     font-style: normal;
 }
+
+@media screen and (max-width: 1023px) {
+    .contacts__form {
+        margin-top: 40px;
+        margin-left: 30px;
+    }
+    .contacts__wrap {
+        padding: 40px 30px 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contacts__top {
+        flex-direction: column;
+    }
+    .contacts__wrap {
+        max-width: fit-content;
+        padding: 40px 15px;
+        margin: 0 -15px;
+    }
+    .contacts__form {
+        margin: 0;
+        margin-top: 20px;
+    }
+    .contacts__map {
+        height: 300px;
+        margin: 0 -15px;
+        margin-top: 40px;
+    }
+    .contacts__map-img {
+        height: 100%;
+        object-fit: cover;
+    }
+}

@@ -1,7 +1,7 @@
 extends ../template
 
 block variables
-    - var title = 'Кейс'
+    - var title = 'Новость'
 
 block content
     main.news-item-page
@@ -26,28 +26,29 @@ block content
 
                     .news-item__right
                         h3.news-item__subtitle Другие новости
-                        ul.news__list.news-item__list
-                            li.news__item
-                                a.news__link(href="#")
-                                    .news__img-wrap
-                                        img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
-                                    .news__text-wrap
-                                        h3.news__subtitle Отслеживание экрана по GPS
-                                        p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
-                                        span.news__date 17.01.2021
-                            li.news__item
-                                a.news__link(href="#")
-                                    .news__img-wrap
-                                        img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
-                                    .news__text-wrap
-                                        h3.news__subtitle Отслеживание экрана по GPS
-                                        p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
-                                        span.news__date 17.01.2021
-                            li.news__item
-                                a.news__link(href="#")
-                                    .news__img-wrap
-                                        img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
-                                    .news__text-wrap
-                                        h3.news__subtitle Отслеживание экрана по GPS
-                                        p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
-                                        span.news__date 17.01.2021
+                        .news-item__slider-right.swiper-container
+                            ul.news__list.news-item__list.swiper-wrapper
+                                li.news__item.swiper-slide
+                                    a.news__link(href="#")
+                                        .news__img-wrap
+                                            img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
+                                        .news__text-wrap
+                                            h3.news__subtitle Отслеживание экрана по GPS
+                                            p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
+                                            span.news__date 17.01.2021
+                                li.news__item.swiper-slide
+                                    a.news__link(href="#")
+                                        .news__img-wrap
+                                            img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
+                                        .news__text-wrap
+                                            h3.news__subtitle Отслеживание экрана по GPS
+                                            p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
+                                            span.news__date 17.01.2021
+                                li.news__item.swiper-slide
+                                    a.news__link(href="#")
+                                        .news__img-wrap
+                                            img.news__img(src="assets/images/news-min.jpg", alt="Отслеживание экрана по GPS")
+                                        .news__text-wrap
+                                            h3.news__subtitle Отслеживание экрана по GPS
+                                            p.news__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом.
+                                            span.news__date 17.01.2021

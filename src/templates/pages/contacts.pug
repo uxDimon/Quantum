@@ -42,7 +42,7 @@ block content
                                         use(xlink:href="assets/images/sprite.svg#whatsapp")
                                 a.contacts__link(href="tel:+7812111-22-33") 8 (812) 111-22-33
                     .contacts__form
-                        form.form__list(action="#" method="#")
+                        form.form__list(action="#" method="#" onsubmit="return false")
                             .form__item
                                 input.form__input(type="text" name="name" id="name")
                                 label.form__label(for="name") Имя
@@ -60,4 +60,4 @@ block content
                                 label.form__label(for="message") Сообщение
                             button.form__btn.btn.btn--blue(type="submit") Отправить
                 .contacts__map
-                    img(src="assets/images/contacts__map-min.png", alt="Карта")
+                    img.contacts__map-img(src="assets/images/contacts__map-min.png", alt="Карта")

@@ -8,6 +8,8 @@
     width: 100%;
     background-image: url('../images/404-banner-min.png');
     background-size: cover;
+    padding: 100px 0;
+    padding-right: 244px;
 }
 .nf__container {
     display: flex;
@@ -36,4 +38,21 @@
 .nf__link {
     margin-top: 65px;
     padding: 19px 50px;
+    @include hover-white;
+}
+
+@media screen and (max-width: 767px) {
+    .nf {
+        padding-right: 0;
+    }
+    .nf__container {
+        justify-content: center;
+    }
+    .nf__num {
+        font-size: 100px;
+    }
+    .nf__link {
+        width: 100%;
+        padding: 19px 20px;
+    }
 }

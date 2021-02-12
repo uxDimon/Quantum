@@ -10,9 +10,10 @@ document.querySelectorAll("input[type='tel']").forEach((item) => {
 	/*Добавление и удаление класса при снятии фокуса с data-type="tel"*/
 	telMask.on("accept", function () {
 		item.setCustomValidity("Укажите полностью номер телефона.");
+        item.classList.remove('success');
 	});
 	telMask.on("complete", function () {
-		item.setCustomValidity("");
+		item.classList.add('success');
 	});
 });
 
@@ -102,11 +103,11 @@ if (document.querySelector('.case-item__slider-rigth')) {
     let sliderOn = false;
   
     function initSlider() {
-      if (document.body.clientWidth >= 1023 && sliderOn) {
+      if (document.body.clientWidth >= 1200 && sliderOn) {
         styleProjects.destroy();
         sliderOn = false;
       }
-      if (document.body.clientWidth < 1023 && !sliderOn) {
+      if (document.body.clientWidth < 1200 && !sliderOn) {
         styleProjects = new Swiper(".case-item__slider-rigth", {
             breakpoints: {
                 280: {
@@ -140,11 +141,11 @@ if (document.querySelector('.news-item__slider-right')) {
     let sliderOn = false;
   
     function initSlider() {
-      if (document.body.clientWidth >= 1023 && sliderOn) {
+      if (document.body.clientWidth >= 1200 && sliderOn) {
         styleProjects.destroy();
         sliderOn = false;
       }
-      if (document.body.clientWidth < 1023 && !sliderOn) {
+      if (document.body.clientWidth < 1200 && !sliderOn) {
         styleProjects = new Swiper(".news-item__slider-right", {
             breakpoints: {
                 280: {
@@ -173,35 +174,35 @@ if (document.querySelector('.news-item__slider-right')) {
 }
 
 //popup noty
-let btns = document.querySelectorAll('button[type="submit"]');
-if(btns) {
-    let noti = document.querySelector('.popup-noty');
-    let popupClose = document.querySelector('.popup-success__btn');
-    for(let btn of btns) {
-        btn.addEventListener('click', function(){
-            noti.classList.add('active');
-        });
-    }
-    popupClose.addEventListener('click', function(){
-        noti.classList.remove('active');
-    });
-}
+// let btns = document.querySelectorAll('button[type="submit"]');
+// if(btns) {
+//     let noti = document.querySelector('.popup-noty');
+//     let popupClose = document.querySelector('.popup-success__btn');
+//     for(let btn of btns) {
+//         btn.addEventListener('click', function(){
+//             noti.classList.add('active');
+//         });
+//     }
+//     popupClose.addEventListener('click', function(){
+//         noti.classList.remove('active');
+//     });
+// }
 
-//popup form
-let links = document.querySelectorAll('.js-form');
-if(links) {
-    let form = document.querySelector('.popup-blank');
-    let popupClose = document.querySelector('.popup-form__btn');
-    for(let link of links) {
-        link.addEventListener('click', function(event){
-            event.preventDefault();
-            form.classList.add('active');
-        });
-    }
-    popupClose.addEventListener('click', function(){
-        form.classList.remove('active');
-    });
-}
+// //popup form
+// let links = document.querySelectorAll('.js-form');
+// if(links) {
+//     let form = document.querySelector('.popup-blank');
+//     let popupClose = document.querySelector('.popup-form__btn');
+//     for(let link of links) {
+//         link.addEventListener('click', function(event){
+//             event.preventDefault();
+//             form.classList.add('active');
+//         });
+//     }
+//     popupClose.addEventListener('click', function(){
+//         form.classList.remove('active');
+//     });
+// }
 
 //anchor
 let anchor = document.querySelector('.main-page__scroll-btn');
@@ -235,6 +236,110 @@ if(document.querySelectorAll('.form__input')) {
     let labels = document.querySelectorAll('.form__label');
 
     for(let input of inputs) {
-        if(input.value)
+        input.addEventListener('focusout', function(){
+            if(!input.value == '') {
+                for(let label of labels) {
+                    label.style.top = 45;
+                }
+            }
+        })
     }
+}
+
+//validation form
+/*Добавление класса при снятии фокуса с текстовых инпутов*/
+let noTelAndEmailInput = document.querySelectorAll('input:not([data-type="tel"]):not([data-type="email"]), textarea');
+noTelAndEmailInput.forEach(item => {
+  item.addEventListener('blur', function () {
+    if (item.value != '') {
+      item.classList.add('success');
+    } else {
+      item.classList.remove('success');
+    }
+  });
+});
+
+
+/*Добавление класса при снятии фокуса с data-type="email"*/
+let emailInput = document.querySelectorAll('input[data-type="email"]');
+emailInput.forEach(item => {
+  item.addEventListener('blur', function () {
+    if (item.value != '') {
+      if (item.value.search(pattern) == 0) {
+        item.classList.remove('error');
+        item.classList.add('success');
+      } else {
+        item.classList.add('error');
+        item.classList.remove('success');
+      }
+    } else {
+      item.classList.remove('input-err');
+      item.classList.remove('input-border');
+    }
+  });
+});
+
+
+/*Функция валидации*/
+function raValidation(form) {
+  let inputs = form.querySelectorAll('[data-required]'),
+    temp = true;
+  for (var i = 0; i < inputs.length; i++) {
+    if (!inputs[i].classList.contains('success')) {
+      inputs[i].classList.add('error');
+      temp = false;
+    } else {
+      inputs[i].classList.remove('error');
+    }
+  }
+  if (temp == false) {
+    console.warn('Форма заполнена некорректно')
+    return false;
+  } else {
+    console.log('Форма отправлена')
+    return true;
+  }
+}
+
+
+/*Обработка клика по кнопке отправки формы*/
+let submitButton = document.querySelectorAll('button[type="submit"]');
+submitButton.forEach(item => {
+  item.addEventListener('click', function (event) {
+    event.preventDefault();
+    let form = this.closest('form');
+    if (raValidation(form)) {
+      //form.submit();
+      ifSuccess(form);
+    }
+  });
+});
+
+
+/*Функция для sucsess*/
+function ifSuccess(form) {
+  let inputsAndButton = form.querySelectorAll('input, textarea, button'),
+    contentButton = form.querySelector('button').textContent;
+  form.querySelector('button').textContent = 'Отправлено';
+  inputsAndButton.forEach(item => {
+    item.classList.remove('error');
+    item.classList.remove('success');
+    item.setAttribute('disabled', 'disabled');
+
+    function selfClose() {
+        document.querySelector('.popup-blank').classList.remove('show');
+      }
+
+    setTimeout(selfClose, 1800);
+    document.querySelector('.popup-noty').classList.remove('active');
+    document.querySelector('.popup-blank').classList.add('active');
+    
+  })
+  setTimeout(() => {
+    form.querySelector('button').textContent = contentButton;
+    inputsAndButton.forEach(item => {
+      item.value = '';
+      item.removeAttribute('disabled');
+    });
+  }, 2000);
 }

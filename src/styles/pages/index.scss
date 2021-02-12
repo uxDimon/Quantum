@@ -11,9 +11,9 @@
 }
 .map-site__cell {
     border: 1px solid $color-black;
-    padding: 10px 20px;
 }
 .map-site__link {
+    display: flex;
     font-size: 24px;
     font-weight: 600;
     color: $color-black;

@@ -20,6 +20,7 @@ $color-grey3: #E3E3E3;
 $color-lightgrey: #F8F8F8;
 $color-white: #FFFFFF;
 $color-blue: #4414DA;
+$color-red: #FF7878;
 
 @import "./common/fonts.scss";
 @import "./common/normalize";
@@ -38,6 +39,7 @@ body {
 
 img {
 	max-width: 100%;
+	display: block;
 }
 
 a {
@@ -100,6 +102,7 @@ main {
 	background: none;
 	border: none;
 	cursor: pointer;
+	transition: all 0.2s ease 0s;
 }
 .btn--blue {
 	color: $color-white;
@@ -109,11 +112,13 @@ main {
 .btn--white {
 	color: $color-super-black;
 	background-color: $color-white;
+	@include hover-blue;
 }
 
 .btn--black {
 	color: $color-white;
 	background-color: $color-black2;
+	@include hover-blue;
 }
 
 .h1 {
@@ -145,15 +150,34 @@ main {
 
 @import "./common/form.scss";
 @import "./common/breadcrumbs.scss";
+@import "./common/popup-success.scss";
+@import "./common/popup-form.scss";
 
 // @media screen and (max-width: 1274px) {
 
 // }
 
-// @media screen and (max-width: 960px) {
+@media screen and (max-width: 1024px) {
+	.h2 {
+		font-size: 28px;
+		line-height: 34px;
+	}
+}
 
-// }
-
-// @media screen and (max-width: 768px) {
-
-// }
+@media screen and (max-width: 767px) {
+	body {
+		font-size: 16px;
+	}
+	.h1 {
+		font-size: 26px;
+		line-height: 130%;
+	}
+	.h2 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.btn {
+		font-size: 16px;
+		line-height: 19px;
+	}
+}

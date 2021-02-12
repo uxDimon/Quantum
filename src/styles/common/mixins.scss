@@ -8,6 +8,7 @@
     &:hover {
         color: $color-white;
         background-color: $color-blue;
+        transition: all 0.2s ease 0s;
     }
 }
 
@@ -15,11 +16,13 @@
     &:hover {
         color: $color-super-black;
         background-color: $color-white;
+        transition: all 0.2s ease 0s;
     }
 }
 
 @mixin hover-black {
     &:hover {
         background-color: $color-super-black;
+        transition: all 0.2s ease 0s;
     }
 }

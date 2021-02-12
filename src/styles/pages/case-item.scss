@@ -53,11 +53,17 @@
         background-color: $color-blue;
         border-radius: 50%;
         left: -20px;
+        transition: all 0.2s ease 0s;
 
         &::after {
             position: absolute;
             font-size: 20px;
             color: $color-white;
+        }
+
+        &:hover {
+            background-color: $color-super-black;
+            transition: all 0.2s ease 0s;
         }
     }
     .swiper-button-next {
@@ -66,12 +72,18 @@
         background-color: $color-blue;
         border-radius: 50%;
         right: -20px;
+        transition: all 0.2s ease 0s;
 
         &::after {
             position: absolute;
             left: 45%;
             font-size: 20px;
             color: $color-white;
+        }
+
+        &:hover {
+            background-color: $color-super-black;
+            transition: all 0.2s ease 0s;
         }
     }
 
@@ -102,6 +114,7 @@
 
 .case-item__right {
     max-width: 355px;
+    margin-left: 20px;
 }
 .case-item__subtitle {
     font-weight: 800;
@@ -112,5 +125,59 @@
 .case-item__list {
     .advertisers-cases__img-wrap {
         height: 186px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .case-item__wrap {
+        flex-direction: column;
+    }
+    .case-item__left {
+        max-width: 100%;
+    }
+    .case-item__right .advertisers-cases__list {
+        display: flex;
+        column-gap: 0;
+        row-gap: 0;
+    }
+    .case-item__slider-img {
+        min-height: 200px;
+    }
+    .case-item__slider {
+        .swiper-button-prev {
+            width: 30px;
+            height: 30px;
+            left: -15px;
+
+            &::after {
+                font-size: 15px;
+            }
+        }
+        .swiper-button-next {
+            width: 30px;
+            height: 30px;
+            right: -15px;
+
+            &::after {
+                font-size: 15px;
+            }
+        }
+    }
+    .case-item__right {
+        max-width: 100%;
+        margin: 0;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .case-item__breadcrumbs {
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .case-item__title {
+        font-size: 20px;
+		line-height: 24px;
+        margin-bottom: 30px;
     }
 }

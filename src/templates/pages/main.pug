@@ -13,12 +13,12 @@ block content
                 .main-banner__text-wrap
                     h1.main-banner__title.h1 Умные LED экраны для Вашего бизнеса
                     p.main-banner__text Расскажите о себе всему городу с помощью наших умных экранов 
-                    button.main-banner__btn.btn.btn--white Подключиться
-            button.main-page__scroll-btn
+                    button.main-banner__btn.btn.btn--white.js-form Подключиться
+            a.main-page__scroll-btn(href="#next")
                 svg.main-page__btn-icon(width="66" height="66")
                     use(xlink:href="assets/images/sprite.svg#icon-mouse")
 
-        section.advantages.layout
+        section.advantages.layout#next
             .layout__top.layout-top
                 .layout__top-banner
                     img.layout__top-img(src="assets/images/block-banner-min.png", alt="")
@@ -45,7 +45,7 @@ block content
                     .layout__text-wrap
                         h3.layout__subtitle.h2 Тепловая карта (где больше всего производятся показы) и отслеживание экрана по GPS
                         p.layout__text Ваша целевая аудитория в видит рекламу в нужные моменты с динамическим контентом, на основе таких данных как местоположение, время суток и погода. Получите максимальную выгоду от покупки рекламы с помощью измеримой рентабельности инвестиций, атрибуции и алгоритмических продаж.
-                        a.layout__btn.btn.btn--black(href="#") Подключиться
+                        a.layout__btn.btn.btn--black.js-form(href="#") Подключиться
 
         section.capability.tabs
             .tabs__container.container
