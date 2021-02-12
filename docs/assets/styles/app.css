@@ -576,8 +576,10 @@ main {
     margin-bottom: 70px; } }
 
 .map-site .container {
+  position: relative;
   padding-top: 50px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  overflow-x: scroll; }
 
 .map-site__table {
   border-spacing: 0;
