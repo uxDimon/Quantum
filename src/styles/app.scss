@@ -59,6 +59,10 @@ p {
 	outline: none;
 }
 
+.scroll-hidden {
+	overflow-y: hidden;
+}
+
 .wrapper {
     min-height: 100vh;
     display: flex;
@@ -68,6 +72,7 @@ p {
 
 main {
 	flex: 1;
+	padding-top: 95px;
 }
 
 .container {

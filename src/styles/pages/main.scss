@@ -50,9 +50,6 @@
     .main-banner__btn {
         padding: 13px 30px;
     }
-    .main-page__scroll-btn {
-        display: none;
-    }
 }
 
 //layout
@@ -128,7 +125,7 @@
 }
 .layout__item--right {
     .layout__img {
-        left: 2%;
+        left: 1%;
     }
     .layout__text-wrap {
         padding-right: 120px;
@@ -136,7 +133,7 @@
 }
 .layout__item--left {
     .layout__img {
-        right: 2%;
+        right: 1%;
     }
     .layout__text-wrap {
         padding-left: 120px;

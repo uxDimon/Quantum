@@ -46,15 +46,13 @@
     height: 25px;
     background-color: $color-white;
     border-radius: 50%;
-    transition: all 0.2s ease 0s;
+    transition: background-color 0.2s ease 0s;
 
     &:hover {
         background-color: $color-blue;
-        transition: all 0.2s ease 0s;
 
         .social-list__icon {
             --icon-color: #FFFFFF;
-            transition: all 0.2s ease 0s;
         }
     }
 }

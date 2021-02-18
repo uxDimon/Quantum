@@ -24,6 +24,7 @@
     top: 45px;
     left: 0;
     transition: top 0.2s;
+    color: $color-grey1;
 }
 .form__input {
     border: none;
@@ -37,8 +38,11 @@
         border-bottom-color: #2bcf54;
     }
 }
-.form__input:focus + .form__label {
-    top: 23px;
+textarea {
+    resize: vertical;
+}
+.form__item.active .form__label {
+    top: 20px;
 }
 .form__btn {
     padding: 19px 76px;

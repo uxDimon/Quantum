@@ -1,4 +1,7 @@
 .header {
+    position: fixed;
+    width: 100%;
+    z-index: 11;
     background-color: $color-black;
 }
 .header__container {
@@ -104,9 +107,6 @@
 }
 
 @media screen and (max-width: 1023px) {
-    .header {
-        position: relative;
-    }
     .header__container {
         padding-top: 12px;
         padding-bottom: 13px;
@@ -145,5 +145,18 @@
     .header__btn {
         margin-top: 60px;
         margin-bottom: 70px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header__nav.active {
+        height: 100vh;
+        padding: calc(100vh - 95vh) 0;
+    }
+    .header__list {
+        row-gap: 20px;
+    }
+    .header__btn {
+        margin: 30px 0;
     }
 }
