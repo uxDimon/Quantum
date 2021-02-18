@@ -188,21 +188,29 @@ if (document.querySelector('.news-item__slider-right')) {
 //     });
 // }
 
-// //popup form
-// let links = document.querySelectorAll('.js-form');
-// if(links) {
-//     let form = document.querySelector('.popup-blank');
-//     let popupClose = document.querySelector('.popup-form__btn');
-//     for(let link of links) {
-//         link.addEventListener('click', function(event){
-//             event.preventDefault();
-//             form.classList.add('active');
-//         });
-//     }
-//     popupClose.addEventListener('click', function(){
-//         form.classList.remove('active');
-//     });
-// }
+//popup form
+let links = document.querySelectorAll('.js-form');
+if(links) {
+    let form = document.querySelector('.popup-blank');
+    let popupClose = document.querySelector('.popup-form__btn');
+    // let page = document.documentElement;
+
+    for(let link of links) {
+        link.addEventListener('click', function(event){
+            event.preventDefault();
+            form.classList.add('active');
+        });
+    }
+    popupClose.addEventListener('click', function(){
+        form.classList.remove('active');
+    });
+
+    // if(form.classList.contains('active')) {
+    //   page.classList.add('scroll-hidden');
+    // } else {
+    //   page.classList.remove('scroll-hidden');
+    // }
+}
 
 //anchor
 let anchor = document.querySelector('.main-page__scroll-btn');
@@ -212,9 +220,9 @@ if(anchor) {
         e.preventDefault()
         let blockID = anchor.getAttribute('href').substr(1),
           offset = document.getElementById(blockID).getBoundingClientRect().top;
-        window.scrollTo({
+        window.scrollBy({
           behavior: 'smooth',
-          top: offset - 0
+          top: offset - 108,
         })
     })
 }
@@ -223,30 +231,41 @@ if(anchor) {
 if(document.querySelector('.header__toggle')) {
     let toggleBtn = document.querySelector('.header__toggle');
     let nav = document.querySelector('.header__nav');
+    page = document.documentElement;
 
     toggleBtn.addEventListener('click', function() {
         toggleBtn.classList.toggle('active');
         nav.classList.toggle('active');
+        page.classList.toggle('scroll-hidden');
     });
 }
 
 //input
 if(document.querySelectorAll('.form__input')) {
-    let inputs = document.querySelectorAll('.form__input');
-    let labels = document.querySelectorAll('.form__label');
+    let formItems = document.querySelectorAll('.form__item');
 
-    for(let input of inputs) {
-        input.addEventListener('onchange', function(){
-            if(!input.value == '') {
-                for(let label of labels) {
-                    label.style.top = 23;
-                }
+    for (let formItem of formItems) {
+        let input = formItem.querySelector('.form__input');
+        let label = formItem.querySelector('.form__label');
+
+        input.onfocus = function(){
+            formItem.classList.add('active');
+        };
+
+        input.onblur = function(){
+            if(input.value !== '') {
+                formItem.classList.add('active');
+            } else {
+                formItem.classList.remove('active');
             }
-        })
+        };
     }
 }
 
 //validation form
+
+let pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+
 /*Добавление класса при снятии фокуса с текстовых инпутов*/
 let noTelAndEmailInput = document.querySelectorAll('input:not([data-type="tel"]):not([data-type="email"]), textarea');
 noTelAndEmailInput.forEach(item => {

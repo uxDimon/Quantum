@@ -373,6 +373,9 @@ p {
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none; }
 
+.scroll-hidden {
+  overflow-y: hidden; }
+
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -380,7 +383,8 @@ p {
   justify-content: space-between; }
 
 main {
-  flex: 1; }
+  flex: 1;
+  padding-top: 95px; }
 
 .container {
   max-width: 1410px;
@@ -447,6 +451,9 @@ main {
   line-height: 44px; }
 
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
   background-color: #242424; }
 
 .header__container {
@@ -543,8 +550,6 @@ main {
          column-gap: 15px; } }
 
 @media screen and (max-width: 1023px) {
-  .header {
-    position: relative; }
   .header__container {
     padding-top: 12px;
     padding-bottom: 13px; }
@@ -574,6 +579,15 @@ main {
   .header__btn {
     margin-top: 60px;
     margin-bottom: 70px; } }
+
+@media screen and (max-width: 767px) {
+  .header__nav.active {
+    height: 100vh;
+    padding: calc(100vh - 95vh) 0; }
+  .header__list {
+    row-gap: 20px; }
+  .header__btn {
+    margin: 30px 0; } }
 
 .map-site .container {
   position: relative;
@@ -645,9 +659,7 @@ main {
     margin-top: 30px;
     margin-bottom: 50px; }
   .main-banner__btn {
-    padding: 13px 30px; }
-  .main-page__scroll-btn {
-    display: none; } }
+    padding: 13px 30px; } }
 
 .advantages {
   margin-bottom: 160px; }
@@ -723,13 +735,13 @@ main {
   margin-top: 140px; }
 
 .layout__item--right .layout__img {
-  left: 2%; }
+  left: 1%; }
 
 .layout__item--right .layout__text-wrap {
   padding-right: 120px; }
 
 .layout__item--left .layout__img {
-  right: 2%; }
+  right: 1%; }
 
 .layout__item--left .layout__text-wrap {
   padding-left: 120px; }
@@ -1116,7 +1128,7 @@ main {
 .advertising__img {
   position: absolute;
   top: 0;
-  left: 2%;
+  left: 1%;
   max-width: initial;
   width: calc(((100vw - 1410px) / 2) + 100%);
   height: 100%;
@@ -1169,7 +1181,7 @@ main {
     height: 45px;
     background-color: #4414DA;
     border-radius: 50%;
-    left: -10px; }
+    left: -5px; }
     .service-slider__container .swiper-button-prev::after {
       position: absolute;
       font-size: 20px;
@@ -1182,7 +1194,7 @@ main {
     height: 45px;
     background-color: #4414DA;
     border-radius: 50%;
-    right: -10px; }
+    right: -5px; }
     .service-slider__container .swiper-button-next::after {
       position: absolute;
       left: 45%;
@@ -1211,7 +1223,8 @@ main {
   margin-bottom: 80px; }
 
 .contacts__top {
-  display: flex; }
+  display: flex;
+  margin: 50px 0; }
 
 .contacts__wrap {
   max-width: 570px;
@@ -1842,13 +1855,11 @@ main {
   height: 25px;
   background-color: #FFFFFF;
   border-radius: 50%;
-  transition: all 0.2s ease 0s; }
+  transition: background-color 0.2s ease 0s; }
   .social-list__item:hover {
-    background-color: #4414DA;
-    transition: all 0.2s ease 0s; }
+    background-color: #4414DA; }
     .social-list__item:hover .social-list__icon {
-      --icon-color: #FFFFFF;
-      transition: all 0.2s ease 0s; }
+      --icon-color: #FFFFFF; }
 
 .social-list__link {
   display: flex;
@@ -1902,7 +1913,8 @@ main {
   position: absolute;
   top: 45px;
   left: 0;
-  transition: top 0.2s; }
+  transition: top 0.2s;
+  color: #ADADAD; }
 
 .form__input {
   border: none;
@@ -1913,8 +1925,11 @@ main {
   .form__input.success {
     border-bottom-color: #2bcf54; }
 
-.form__input:focus + .form__label {
-  top: 23px; }
+textarea {
+  resize: vertical; }
+
+.form__item.active .form__label {
+  top: 20px; }
 
 .form__btn {
   padding: 19px 76px;
