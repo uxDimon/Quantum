@@ -355,7 +355,8 @@ template {
 body {
   font-family: "Inter", sans-serif;
   font-size: 18px;
-  line-height: 160%; }
+  line-height: 160%;
+  overflow-x: hidden; }
 
 img {
   max-width: 100%;
@@ -1836,7 +1837,8 @@ main {
   margin: 0; }
 
 .footer__link {
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  white-space: nowrap; }
   .footer__link:hover, .footer__link:active {
     text-decoration: underline;
     transition: 0.2s; }
