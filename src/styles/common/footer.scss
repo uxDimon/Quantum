@@ -28,6 +28,7 @@
 }
 .footer__link {
     color: $color-white;
+    white-space: nowrap;
 
     &:hover, &:active {
         text-decoration: underline;
