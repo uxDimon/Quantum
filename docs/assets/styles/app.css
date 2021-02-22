@@ -1883,7 +1883,8 @@ main {
   .footer__container--top {
     align-items: flex-start; }
   .footer__container--bottom {
-    justify-items: center; }
+    justify-items: center;
+    text-align: center; }
   .footer__list {
     grid-template-columns: 1fr;
     row-gap: 10px; } }
