@@ -8,6 +8,10 @@
 
     .breadcrumbs__link {
         color: $color-super-black;
+
+        svg {
+            --icon-breadcrumbs: #{$color-super-black};
+        }
     }
 }
 .case-item__title {
