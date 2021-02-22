@@ -1499,6 +1499,8 @@ main {
   margin-bottom: 80px; }
   .case-item__breadcrumbs .breadcrumbs__link {
     color: #000000; }
+    .case-item__breadcrumbs .breadcrumbs__link svg {
+      --icon-breadcrumbs: #000000; }
 
 .case-item__title {
   font-weight: 800;
@@ -1665,6 +1667,8 @@ main {
   margin-bottom: 80px; }
   .news-item__breadcrumbs .breadcrumbs__link {
     color: #000000; }
+    .news-item__breadcrumbs .breadcrumbs__link svg {
+      --icon-breadcrumbs: #000000; }
 
 .news-item__title {
   font-weight: 800;
