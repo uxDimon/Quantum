@@ -638,7 +638,10 @@ main {
   padding-top: calc(100vh - 85vh); }
 
 .main-banner__text-wrap {
-  max-width: 820px; }
+  max-width: 950px; }
+
+.main-banner__title.h1 {
+  font-size: 44px; }
 
 .main-banner__text {
   font-size: 18px;
