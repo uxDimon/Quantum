@@ -1,3 +1,4 @@
+window.__forceSmoothScrollPolyfill__ = true;
 // https://imask.js.org/
 // Маска для телефона
 document.querySelectorAll("input[type='tel']").forEach((item) => {
